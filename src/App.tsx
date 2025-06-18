@@ -56,9 +56,9 @@ function App() {
   return (
     <div className="bg-black min-h-dvh relative text-white ">
       {isVisible && (
-        <div className="rounded-[16px] shadow-lg z-50 overflow-hidden absolute bottom-15 right-5 ">
+        <div className="rounded-[16px] flex flex-col items-start justify-between w-[80%] md:w-[400px] max-h-[400px] h-[400px] shadow-lg z-50 absolute bottom-15 right-5 ">
           {/* Title Bar */}
-          <div className="bg-red-600 p-3 flex items-center justify-between text-base sm:text-lg">
+          <div className="bg-red-600 p-3 rounded-t-[16px] w-full flex items-center justify-between text-base sm:text-lg">
             <p className="capitalize">chatbot</p>
             <p
               onClick={() => setIsVisible(false)}
@@ -68,7 +68,7 @@ function App() {
             </p>
           </div>
           {/* Convo Area */}
-          <div ref={convoRef} className="flex-1 overflow-y-auto min-h-[200px] p-2 sm:p-4 bg-[#0f0f0f] text-black flex flex-col gap-2">
+          <div ref={convoRef} className="flex-1 overflow-y-auto min-h-[200px] h-[200px] w-full p-2 sm:p-4 bg-[#0f0f0f] text-black flex flex-col gap-2">
             {messages.map((msg) => (
               <div
                 key={msg.id}
@@ -89,7 +89,7 @@ function App() {
           {/* Input Form */}
           <form
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e, input)}
-            className="flex items-center gap-2 p-2 sm:p-3 border-t border-gray-300 bg-[#0f0f0f] "
+            className="w-full flex items-center rounded-b-[16px] gap-2 p-2 sm:p-3 border-t border-gray-300 bg-[#0f0f0f] "
           >
             <input
               title="enter your message"
