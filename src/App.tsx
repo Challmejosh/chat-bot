@@ -72,10 +72,10 @@ function App() {
             {messages.map((msg) => (
               <div
                 key={msg.id}
-                className={`max-w-[85%] sm:max-w-[70%] w-[80%] px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base ${
+                className={`max-w-[85%] sm:max-w-[70%] px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base ${
                   msg.sender === "me"
-                    ? "bg-red-600 text-white self-end rounded-br-none"
-                    : "bg-[#333333] text-white self-start rounded-bl-none"
+                    ? "bg-red-600 text-white max-w-[80%] w-fit self-end rounded-br-none"
+                    : "bg-[#333333] text-white w-[80%]  self-start rounded-bl-none"
                 }`}
               >
                 {msg.sender === "me" ? (
