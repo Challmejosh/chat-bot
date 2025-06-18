@@ -30,7 +30,10 @@ function App() {
   async function sendPrompt(prompt: string) {
     const chatSession = model.startChat({
       generationConfig,
-      history: [],
+      history: [{
+        role: "user",
+        parts: [{ text: prompt }],
+      },]
     });
     const result = await chatSession.sendMessage(prompt);
     const res = result.response.text();
