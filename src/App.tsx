@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="bg-black min-h-screen relative text-white ">
       {isVisible && (
-        <div className="w-full max-w-[400px] min-h-[300px] h-[60vh] sm:h-[400px] fixed sm:absolute bottom-0 sm:bottom-8 left-1/2 sm:left-auto -translate-x-1/2 sm:translate-x-0 right-0 sm:right-15 overflow-hidden bg-green-200 rounded-t-[16px] sm:rounded-[16px] flex flex-col shadow-lg z-50">
+        <div className="rounded-[16px] shadow-lg z-50 overflow-hidden absolute bottom-15 right-5 ">
           {/* Title Bar */}
           <div className="bg-red-600 p-3 flex items-center justify-between text-base sm:text-lg">
             <p className="capitalize">chatbot</p>
@@ -68,14 +68,14 @@ function App() {
             </p>
           </div>
           {/* Convo Area */}
-          <div ref={convoRef} className="flex-1 overflow-y-auto min-h-[200px] p-2 sm:p-4 bg-green-100 text-black flex flex-col gap-2">
+          <div ref={convoRef} className="flex-1 overflow-y-auto min-h-[200px] p-2 sm:p-4 bg-[#0f0f0f] text-black flex flex-col gap-2">
             {messages.map((msg) => (
               <div
                 key={msg.id}
                 className={`max-w-[85%] sm:max-w-[70%] px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base ${
                   msg.sender === "me"
-                    ? "bg-green-500 text-white self-end rounded-br-none"
-                    : "bg-white text-black self-start rounded-bl-none"
+                    ? "bg-red-600 text-white self-end rounded-br-none"
+                    : "bg-[#0f0f0f] text-black self-start rounded-bl-none"
                 }`}
               >
                 {msg.sender === "me" ? (
@@ -89,19 +89,19 @@ function App() {
           {/* Input Form */}
           <form
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e, input)}
-            className="flex items-center gap-2 p-2 sm:p-3 border-t border-gray-300 bg-white"
+            className="flex items-center gap-2 p-2 sm:p-3 border-t border-gray-300 bg-[#0f0f0f] "
           >
             <input
               title="enter your message"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               type="text"
-              className="flex-1 px-3 sm:px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-black bg-gray-100 placeholder-gray-500 text-sm sm:text-base"
+              className="flex-1 px-3 sm:px-4 py-2 rounded-md border-[1px] focus:outline-none focus:ring-2 focus:ring-gray-100 text-white bg-transparent placeholder-gray-500 text-sm sm:text-base"
               placeholder="Type your message..."
             />
             <button
               type="submit"
-              className="px-3 sm:px-4 py-2 rounded-full bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base"
+              className="px-3 sm:px-4 py-2 rounded-md cursor-pointer bg-red-600 text-white font-semibold hover:bg-red-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-100 text-sm sm:text-base"
             >
               Send
             </button>
@@ -112,7 +112,7 @@ function App() {
         <div className="absolute bottom-5 right-8 ">
           <p
             onClick={() => setIsVisible(true)}
-            className=" text-[30px] cursor-pointer  "
+            className=" text-[30px] bg-red-600 rounded-full px-2 cursor-pointer  "
           >
             💬
           </p>
