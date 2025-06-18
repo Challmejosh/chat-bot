@@ -75,7 +75,7 @@ function App() {
                 className={`max-w-[85%] sm:max-w-[70%] px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base ${
                   msg.sender === "me"
                     ? "bg-red-600 text-white self-end rounded-br-none"
-                    : "bg-[#0f0f0f] text-black self-start rounded-bl-none"
+                    : "bg-[#0f0f0f] text-white self-start rounded-bl-none"
                 }`}
               >
                 {msg.sender === "me" ? (
