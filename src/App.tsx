@@ -68,11 +68,11 @@ function App() {
             </p>
           </div>
           {/* Convo Area */}
-          <div ref={convoRef} className="flex-1 overflow-y-auto min-h-[200px] h-[200px] w-full p-2 sm:p-4 bg-[#0f0f0f] text-black flex flex-col gap-2">
+          <div ref={convoRef} className="flex-1 overflow-y-scroll [&::-webkit-scrollbar]:hidden scrollbar min-h-[200px] h-[200px] w-full p-2 sm:p-4 bg-[#0f0f0f] text-black flex flex-col gap-2">
             {messages.map((msg) => (
               <div
                 key={msg.id}
-                className={`max-w-[85%] sm:max-w-[70%] w-[80%] bg-red-300 px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base ${
+                className={`max-w-[85%] sm:max-w-[70%] w-[80%] px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base ${
                   msg.sender === "me"
                     ? "bg-red-600 text-white self-end rounded-br-none"
                     : "bg-[#333333] text-white self-start rounded-bl-none"
