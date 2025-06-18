@@ -54,7 +54,7 @@ function App() {
     }
   }, [messages, isVisible]);
   return (
-    <div className="bg-black min-h-screen relative text-white ">
+    <div className="bg-black min-h-dvh relative text-white ">
       {isVisible && (
         <div className="w-full max-w-[400px] min-h-[300px] h-[60vh] sm:h-[400px] fixed sm:absolute bottom-0 sm:bottom-8 left-1/2 sm:left-auto -translate-x-1/2 sm:translate-x-0 right-0 sm:right-15 overflow-hidden bg-green-200 rounded-t-[16px] sm:rounded-[16px] flex flex-col shadow-lg z-50">
           {/* Title Bar */}
